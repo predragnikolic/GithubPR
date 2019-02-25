@@ -120,9 +120,8 @@ def get_remotes():
 def list_pull_requests(remote):
     sublime.status_message('Fetching Pull Requests from "{}"'.format(remote["name"]))
 
-    fetch_pull_request(remote)
-    # t = threading.Thread(target=send_request, args=(self.view,))
-    # t.start()
+    t = threading.Thread(target=fetch_pull_request, args=(remote,))
+    t.start()
 
 
 def fetch_pull_request(remote):
