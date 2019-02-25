@@ -2,10 +2,5 @@
     {
         "caption": "Github: Checkout Pull Requests",
         "command": "github_list_pull_request"
-    },
-    {
-        "caption": "Github: Checkout Pull Requests hideedn",
-        "command": "github_checkout_pull_request"
-    },
-
+    }
 ]
