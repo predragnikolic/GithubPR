@@ -8,3 +8,6 @@ Sublime text 3 plugin for checking out Github PRs.
 2. This will list all the open PRs. Chose the one you would like to checkout.
 
 Done :)
+
+
+Want some more cool git plugins that I made? See [GitDiffView](https://github.com/predragnikolic/sublime-git-diff-view)
