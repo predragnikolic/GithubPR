@@ -9,7 +9,6 @@ import threading
 import json
 
 from urllib.request import Request, urlopen
-from html import escape
 
 
 DEBUG = True
