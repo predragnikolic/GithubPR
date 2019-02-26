@@ -10,4 +10,4 @@ Sublime text 3 plugin for checking out Github PRs.
 Done :)
 
 
-Want some more cool git plugins that I made? See [GitDiffView](https://github.com/predragnikolic/sublime-git-diff-view)
+Want some more git plugins that I made? 🙈 [GitDiffView](https://github.com/predragnikolic/sublime-git-diff-view) 🙊
