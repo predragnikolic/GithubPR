@@ -184,4 +184,5 @@ def get_output_panel():
     if panel is None:
         panel = window.create_output_panel('github_pr')
 
+    panel.set_syntax_file('Packages/Text/Plain text.tmLanguage')
     return panel
