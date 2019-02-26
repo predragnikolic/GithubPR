@@ -11,7 +11,7 @@ import json
 from urllib.request import Request, urlopen
 
 
-DEBUG = True
+DEBUG = False
 
 
 def debug(*args):
