@@ -173,7 +173,7 @@ class UpdateGithubOutputPanel(sublime_plugin.TextCommand):
         window = self.view.window()
         panel = get_output_panel()
 
-        panel.replace(edit, sublime.Region(0, self.view.size()), output)
+        panel.replace(edit, sublime.Region(0, panel.size()), output)
         window.run_command("show_panel", {"panel": "output.github_pr"})
 
 
