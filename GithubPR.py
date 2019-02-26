@@ -32,11 +32,13 @@ class Command:
         return self.run(cmd)
 
     def git_fetch(self, pr, remote):
-        cmd = "git fetch {} pull/{}/head:{}".format(
+        cmd = "git fetch {} pull/{}/head:{}/{}".format(
             remote["name"],
             pr["number"],
+            pr["user"]["login"],
             pr["head"]["ref"]
         )
+
         return self.run(cmd)
 
     def git_checkout(self, branch_name):
@@ -157,7 +159,7 @@ def select_pull_requsest(pull_requests, remote):
 def checkout_pull_request(pr, remote):
     window = sublime.active_window()
     command = Command()
-    branch_name = pr["head"]["ref"]
+    branch_name = "{}/{}".format(pr["user"]["login"], pr["head"]["ref"])
     sublime.status_message("Fetching {}:{}".format(pr["user"]["login"], branch_name))
     command.git_fetch(pr, remote)
 
