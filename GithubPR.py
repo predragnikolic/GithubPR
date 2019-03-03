@@ -45,6 +45,10 @@ class Command:
         cmd = "git checkout {}".format(branch_name)
         return self.run(cmd)
 
+    def git_remote_add(self, remote_name, repository_url):
+        cmd = " git remote add {} {}".format(remote_name, repository_url)
+        return self.run(cmd)
+
     def run(self, cmd):
         p = subprocess.Popen(cmd,
                              bufsize=-1,
@@ -188,3 +192,52 @@ def get_output_panel():
 
     panel.set_syntax_file('Packages/Text/Plain text.tmLanguage')
     return panel
+
+
+class RemoteNameInputHandler(sublime_plugin.ListInputHandler):
+    def name(self):
+        return "remote_name"
+
+    def placeholder(self):
+        return 'remote_name'
+
+    def validate(self, name):
+        return len(name) > 0
+
+    def list_items(self):
+        return ['origin', 'upstream']
+
+    def next_input(self, _args):
+        return RemoteUrlInputHandler()
+
+
+class RemoteUrlInputHandler(sublime_plugin.TextInputHandler):
+    def name(self):
+        return "remote_url"
+
+    def placeholder(self):
+        return 'https://github.com/owner/repo.git'
+
+    def validate(self, name):
+        return len(name) > 0
+
+
+class GithubAddRemoteCommand(sublime_plugin.WindowCommand):
+    def input(self, args):
+        return RemoteNameInputHandler()
+
+    def run(self, remote_name, remote_url):
+        taken_names = list(map(lambda remote: remote['name'], get_remotes()))
+
+        if remote_name in taken_names:
+            sublime.status_message('⚠ {} remote name is already taken!'.format(remote_name))
+            return
+
+        command = Command()
+        command.git_remote_add(remote_name, remote_url)
+
+        self.window.run_command('update_github_output_panel', {
+            "output": "Added remote {} for {}".format(remote_name, remote_url)
+        })
+
+

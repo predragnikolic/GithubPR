@@ -2,5 +2,9 @@
     {
         "caption": "Github: Checkout Pull Requests",
         "command": "github_list_pull_request"
+    },
+    {
+        "caption": "Git: Add Remote",
+        "command": "github_add_remote"
     }
 ]
