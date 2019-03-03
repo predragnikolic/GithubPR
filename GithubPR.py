@@ -249,6 +249,24 @@ class GithubAddRemoteCommand(sublime_plugin.WindowCommand):
         })
 
 
+def sync_fork():
+    command = Command()
+
+    # Fetch the branches and their respective commits from the upstream repository
+    output = command.git_fetch_upstream()
+
+    # Check out your fork's local master branch
+    output += command.git_checkout('master')
+
+    # Merge the changes from upstream/master into your local master branch.
+    output += command.git_merge('upstream/master')
+
+    window = sublime.active_window()
+    window.run_command('update_github_output_panel', {
+        "output": output
+    })
+
+
 class GithubSyncForkCommand(sublime_plugin.WindowCommand):
     def is_visible(self):
         if len(get_remotes()) > 1:
@@ -256,19 +274,8 @@ class GithubSyncForkCommand(sublime_plugin.WindowCommand):
         return False
 
     def run(self):
-        command = Command()
+        t = threading.Thread(target=sync_fork)
+        t.start()
 
-        # Fetch the branches and their respective commits from the upstream repository
-        output = command.git_fetch_upstream()
-
-        # Check out your fork's local master branch
-        output += command.git_checkout('master')
-
-        # Merge the changes from upstream/master into your local master branch.
-        output += command.git_merge('upstream/master')
-
-        self.window.run_command('update_github_output_panel', {
-            "output": output
-        })
 
         
