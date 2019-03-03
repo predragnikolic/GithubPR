@@ -49,6 +49,14 @@ class Command:
         cmd = " git remote add {} {}".format(remote_name, repository_url)
         return self.run(cmd)
 
+    def git_fetch_upstream(self):
+        cmd = "git fetch upstream"
+        return self.run(cmd)
+
+    def git_merge(self, branch_name):
+        cmd = "git merge {}".format(branch_name)
+        return self.run(cmd)
+
     def run(self, cmd):
         p = subprocess.Popen(cmd,
                              bufsize=-1,
@@ -241,3 +249,26 @@ class GithubAddRemoteCommand(sublime_plugin.WindowCommand):
         })
 
 
+class GithubSyncForkCommand(sublime_plugin.WindowCommand):
+    def is_visible(self):
+        if len(get_remotes()) > 1:
+            return True
+        return False
+
+    def run(self):
+        command = Command()
+
+        # Fetch the branches and their respective commits from the upstream repository
+        output = command.git_fetch_upstream()
+
+        # Check out your fork's local master branch
+        output += command.git_checkout('master')
+
+        # Merge the changes from upstream/master into your local master branch.
+        output += command.git_merge('upstream/master')
+
+        self.window.run_command('update_github_output_panel', {
+            "output": output
+        })
+
+        
