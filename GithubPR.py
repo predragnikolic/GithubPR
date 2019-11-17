@@ -16,7 +16,13 @@ DEBUG = False
 
 def debug(*args):
     if DEBUG:
-        print(*args)
+        print('GithubPR -> ', *args)
+
+
+def is_git_repo():
+    root = sublime.active_window().extract_variables()['folder']
+    # TODO: maybe for WINDOWS use join path ??
+    return os.path.exists("{}/.git".format(root))
 
 
 class Command:
@@ -74,10 +80,7 @@ class Command:
 
 class GithubListPullRequestCommand(sublime_plugin.WindowCommand):
     def is_visible(self):
-        root = self.window.extract_variables()['folder']
-        # TODO: maybe for WINDOWS use join path ??
-        is_git_repo = os.path.exists("{}/.git".format(root))
-        return is_git_repo
+        return is_git_repo()
 
     def run(self):
         self.remotes = get_remotes()
@@ -98,6 +101,9 @@ class GithubListPullRequestCommand(sublime_plugin.WindowCommand):
 
 
 def get_remotes():
+    if not is_git_repo():
+        return []
+
     command = Command()
     output = command.git_remote_v()
 
