@@ -11,4 +11,8 @@
         "caption": "Github: Sync Fork",
         "command": "github_sync_fork"
     },
+    {
+        "caption": "Open Package",
+        "command": "open_package"
+    }
 ]
