@@ -1,0 +1,19 @@
+{
+  "name": "nux",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "@nuxt/content-theme-docs": "^0.5.6",
+    "nuxt": "^2.14.5"
+  },
+  "devDependencies": {
+    "push-dir": "^0.4.1"
+  }
+}
