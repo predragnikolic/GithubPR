@@ -13,7 +13,7 @@ We recommend installing [LSP-json](https://packagecontrol.io/packages/LSP-json),
 
 ## Angular
 
-* Follow installation instructions on [LSP-angular](https://github.com/sublimelsp/LSP-angular).
+Follow installation instructions on [LSP-angular](https://github.com/sublimelsp/LSP-angular).
 
 ## Bash
 

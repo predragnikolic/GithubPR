@@ -12,8 +12,6 @@ features:
 footer: null
 ---
 
-<style> footer .dark-img, footer .light-img{ opacity: 0}</style>
-
 ## Introduction
 
 LSP for Sublime Text implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) and it provides features like auto complete, go to definition, find all references etc.
@@ -26,7 +24,7 @@ All features are powered by a language server. A language server provides intell
 
 * Add a language server by installing a [LSP-plugin](https://packagecontrol.io/search/LSP-) for your language from Package Control.
 
-<alert type="info">
+<alert type="warning">
 Read the README for your LSP-plugin to meet the requirements and additional installation instructions.
 </alert>
 

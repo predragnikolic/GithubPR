@@ -1,0 +1,11 @@
+* {
+  /* style scrollbars */
+  scrollbar-color: #00000050 #00000010; /* firefox */
+  scrollbar-width: thin; /* firefox */
+}
+
+/* override the background color of the selected item sidebar when dark theme */
+.dark-mode aside .dark\:bg-primary-900{
+  --bg-opacity: 0.3;
+}
+
