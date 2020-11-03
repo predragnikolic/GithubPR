@@ -6,7 +6,9 @@ category: Guide
 ---
 
 <alert type="info">
+
 We recommend installing [LSP-json](https://packagecontrol.io/packages/LSP-json), as it suggest smart settings completions and report errors when inside the `LSP.sublime-settings` file.
+
 </alert>
 
 ## Angular
