@@ -28,4 +28,4 @@ All features are powered by a language server. A language server provides intell
 Read the README of the LSP-plugin to meet the requirements and additional installation instructions.
 </alert>
 
-If there is not a LSP-plugin, follow the instructions to [setup the language server](/setup-language-server) manually.
+If there is not a LSP-plugin for a language server on Package Control, follow the instructions to [setup the language server](/setup-language-server) manually.
