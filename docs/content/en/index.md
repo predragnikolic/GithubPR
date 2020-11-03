@@ -22,10 +22,10 @@ All features are powered by a language server. A language server provides intell
 
 * Install [LSP](https://packagecontrol.io/packages/LSP) from Package Control.
 
-* Add a language server by installing a [LSP-plugin](https://packagecontrol.io/search/LSP-) for your language from Package Control.
+* Add a language server by installing a [LSP-plugin](https://packagecontrol.io/search/LSP-) from Package Control.
 
 <alert type="warning">
-Read the README for your LSP-plugin to meet the requirements and additional installation instructions.
+Read the README of the LSP-plugin to meet the requirements and additional installation instructions.
 </alert>
 
-If there is not a LSP-plugin for your language, you can [setup the language server](/setup-language-server) manually.
+If there is not a LSP-plugin, follow the instructions to [setup the language server](/setup-language-server) manually.
