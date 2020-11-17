@@ -29,3 +29,7 @@ Read the README of the LSP-plugin to meet the requirements and additional instal
 </alert>
 
 If there is not a LSP-plugin for a language server on Package Control, follow the instructions to [setup the language server](/setup-language-server) manually.
+
+## Contributors
+
+<Contributors user="sublimelsp" repo="LSP"/>
