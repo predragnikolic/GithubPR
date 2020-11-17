@@ -18,6 +18,9 @@ LSP for Sublime Text implements the [Language Server Protocol](https://microsoft
 
 All features are powered by a language server. A language server provides intelligent code completions based on language semantics and an analysis of your source code.
 
+<Carousel></Carousel>
+
+
 ## Installation
 
 * Install [LSP](https://packagecontrol.io/packages/LSP) from Package Control.
@@ -32,4 +35,4 @@ If there is not a LSP-plugin for a language server on Package Control, follow th
 
 ## Contributors
 
-<Contributors user="sublimelsp" repo="LSP"/>
+<Contributors user="sublimelsp" repo="LSP"></Contributors>
