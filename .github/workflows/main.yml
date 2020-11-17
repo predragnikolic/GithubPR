@@ -1,27 +1,15 @@
-name: CI
+name: ci
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
-defaults:
-  run:
-    working-directory: docs
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npm run generate
-    - run: npm run deploy
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force

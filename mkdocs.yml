@@ -1,0 +1,38 @@
+site_name: LSP Docs
+repo_url: https://github.com/sublimelsp/LSP/
+theme:
+  name: material
+  palette:
+      scheme: slate
+      accent:  deep orange
+      primary: deep orange
+
+# override css
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  # higlight code block
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+  # add tip, warning info boxes
+  - admonition
+
+  # show # after each header
+  - toc:
+      permalink: '#'
+
+
+nav:
+  - Getting Started: './index.md'
+  - Setup Language Server: './setup_language_server.md'
+  - Features:
+    - './features/overview.md'
+    - './features/keybindings.md'
+    - './features/command_palette.md'
+    - './features/settings.md'
+  - Guides:
+    - './guide/client_configuration.md'
+    - './guide/create_plugin.md'
+  - Common Issues: './common_issues.md'
