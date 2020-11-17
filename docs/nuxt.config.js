@@ -19,7 +19,7 @@ export default theme({
         liveEdit: false,
         markdown: {
             prism: {
-                theme: 'prism-themes/themes/prism-dracula.css'
+                theme: 'prism-themes/themes/prism-xonokai.css'
             }
         }
     }

@@ -51,6 +51,23 @@ Follow installation instructions on [LSP-json](https://github.com/sublimelsp/LSP
 
 Follow installation instructions on [LSP-TexLab](https://github.com/sublimelsp/LSP-TexLab).
 
+## Lisp
+
+1. Install [cc-lsp](https://github.com/cxxxr/cl-lsp) using Roswell.
+2. Copy/Paste this to `LSP.sublime-settings` file:
+
+```json{2}
+{
+    "clients": {
+        "cc-lsp": {
+            "enabled": true,
+            "command": ["cl-lsp", "stdio"],
+            "selector": "source.lisp"
+        }
+    }
+}
+```
+
 ## PromQL
 
 Follow installation instructions on [LSP-promql](https://github.com/prometheus-community/sublimelsp-promql).
